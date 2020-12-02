@@ -6,7 +6,7 @@ TESTFLAGS :=
 LDFLAGS   := -w -s
 GOFLAGS   :=
 BINDIR    := $(CURDIR)/bin
-VERSION   := 0.4.1
+VERSION   := 0.4.2
 
 # Required for globs to work correctly
 SHELL=/bin/bash
@@ -21,5 +21,5 @@ devopstic: dependencies
 	mv bin/main bin/devopstic
 
 docker:
-	docker build -t splisson/devopstic:v$(VERSION) .
-	docker push splisson/devopstic:v$(VERSION)
+	docker build -t juanjopb/devopstic:v$(VERSION) .
+	docker push juanjopb/devopstic:v$(VERSION)

@@ -28,12 +28,12 @@ spec:
           - name: DEVOPSTIC_USER
             valueFrom:
               secretKeyRef:
-                name: devopstic
+                name: devopstic-secret
                 key: api_user
           - name: DEVOPSTIC_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: devopstic
+                name: devopstic-secret
                 key: api_password
           - name: DEVOPSTIC_DATABASE_HOST
             value: "{{ .Values.api.database.host }}"
@@ -41,15 +41,17 @@ spec:
             value: "{{ .Values.api.database.port }}"
           - name: DEVOPSTIC_DATABASE_NAME
             value: "{{ .Values.api.database.name }}"
+          - name: DEVOPSTIC_GITHUB_WEBHOOK_SECRET
+            value: "{{ .Values.api.api_github_secret }}"
           - name: DEVOPSTIC_DATABASE_USER
             valueFrom:
               secretKeyRef:
-                name: devopstic
+                name: devopstic-secret
                 key: database_user
           - name: DEVOPSTIC_DATABASE_PASSWORD
             valueFrom:
               secretKeyRef:
-                name: devopstic
+                name: devopstic-secret
                 key: database_password
           ports:
             - name: http

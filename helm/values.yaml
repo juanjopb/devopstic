@@ -8,15 +8,21 @@ fullnameOverride: ""
 api:
   serviceName: devopstic-api
   replicaCount: 1
+  api_github_secret: DeV0spt1c 
+  api_user: devopstic-admin
+  api_pass: devopstic
   image:
-    repository: splisson/devopstic
+    #repository: splisson/devopstic
+    repository: juanjosepb/devopstic_local
     tag: v0.1
     pullPolicy: Always
 
   database:
-    host: localhost
+    host: devopstic-postgresql
     port: 5432
     name: devopstic
+    user: postgres
+    pass: password123
 
   service:
     type: ClusterIP

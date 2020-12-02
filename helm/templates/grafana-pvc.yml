@@ -6,7 +6,7 @@ metadata:
   labels:
     type: amazonEBS
 spec:
-  storageClassName: {{ .Values.grafana.storageClass }}
+#  storageClassName: {{ .Values.grafana.storageClass }}
   accessModes:
     - ReadWriteOnce
   resources:
