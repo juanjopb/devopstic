@@ -21,5 +21,5 @@ devopstic: dependencies
 	mv bin/main bin/devopstic
 
 docker:
-	docker build -t juanjopb/devopstic:v$(VERSION) .
-	docker push juanjopb/devopstic:v$(VERSION)
+	docker build -t juanjosepb/devopstic:v$(VERSION) .
+	docker push juanjosepb/devopstic:v$(VERSION)

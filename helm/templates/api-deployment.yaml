@@ -43,7 +43,7 @@ spec:
             value: "{{ .Values.api.database.name }}"
           - name: DEVOPSTIC_GITHUB_WEBHOOK_SECRET
             value: "{{ .Values.api.api_github_secret }}"
-          - name: DEVOPSTIC_DATABASE_USER
+          - name: DEVOPSTIC_DATABASE_USERNAME
             valueFrom:
               secretKeyRef:
                 name: devopstic-secret
