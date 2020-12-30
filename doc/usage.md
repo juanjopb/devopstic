@@ -60,6 +60,10 @@ This api creates an event and the resources the event may require (commit, incid
 It return the event created.
 
 #### POST /events
+#### Header
+```
+Authorization: Bearer <JWT obtained from POST /tokens api>
+```
 #### Payload
 ```
 {  
@@ -104,7 +108,10 @@ Response:
 ## Get Events
 
 #### GET /events
-
+#### Header
+```
+Authorization: Bearer <JWT obtained from POST /tokens api>
+```
 **Example**
 
 `curl -XGET http://localhost:8080/events -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1OTI1NDAwMzksImlkIjoiYWRtaW4iLCJvcmlnX2lhdCI6MTU2MTAwNDAzOX0.gKePomW78fxblYN9GIzNBgGbV8qFc0Kg71CBKqhzIxw" `
