@@ -12,8 +12,8 @@ api:
   api_user: admin
   api_pass: devopstic
   image:
-    repository: splisson/devopstic
-    tag: v0.4.2
+    repository: juanjosepb/devopstic_local
+    tag: v0.3
     pullPolicy: Always
 
   database:
