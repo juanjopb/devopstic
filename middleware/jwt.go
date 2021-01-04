@@ -13,6 +13,12 @@ import (
 
 const IdentityKey = "id"
 
+type User struct {
+	UserName  string
+	FirstName string
+	LastName  string
+}
+
 func NewAuthMiddleware() *jwt.GinJWTMiddleware {
 	adminUsername := "admin"
 	authMiddleware := &jwt.GinJWTMiddleware{
@@ -55,10 +61,14 @@ func NewAuthMiddleware() *jwt.GinJWTMiddleware {
 			return nil, jwt.ErrFailedAuthentication
 		},
 		Authorizator: func(data interface{}, c *gin.Context) bool {
+			//if v, ok := data.(string); ok && v == adminUsername {
+			//v, ok := data.(*User)
+			//fmt.Println("Print data. %", v)
+			//fmt.Println("Print ok. %", ok)
+			//fmt.Println("Print c. %", c)
 			if v, ok := data.(string); ok && v == adminUsername {
 				return true
 			}
-
 			return false
 		},
 		Unauthorized: func(c *gin.Context, code int, message string) {
@@ -86,6 +96,7 @@ func NewAuthMiddleware() *jwt.GinJWTMiddleware {
 		SigningAlgorithm: "HS256",
 	}
 	authMiddleware, err := jwt.New(authMiddleware)
+
 	if err != nil {
 		log.Fatal(err)
 	}
